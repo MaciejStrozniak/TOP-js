@@ -62,7 +62,17 @@ console.log("-----------");
 // console.log(newLine);
 
 const stringMethods = `Jakiś tam tekst :)`;
-console.log(stringMethods.padStart(10, "0"));
+const tablica = ["a", "d", "f"];
+console.log(stringMethods.padStart(4, "x"));
+console.log(typeof(tablica)); // zwraca object
+
+
+document.addEventListener('DOMContentLoaded', function(){
+    const element = document.getElementById('paragraph');
+    const array = document.getElementById('array');
+    element.innerHTML = stringMethods.replace(/jakiś/gi, "Taki");
+    array.innerHTML = stringMethods.split(" "); // nie do końca rozumiem jak to działa
+});
 
 // prompt(-Infinity);
 // alert(Infinity);
