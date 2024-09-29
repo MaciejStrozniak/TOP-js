@@ -47,7 +47,27 @@ console.log("2" + 2 + 1);
 
 console.log("-----------");
 
-let inputA = prompt("First input: ");
-let inputB = prompt("Second input: ");
-let inputC = +inputA + +inputB;
-alert("The sum of inputs is: " + inputC);
+// const isItBigInt = 9999999999999999999999999999999999999999999999999999999999999999999n;
+// alert(typeof(isItBigInt));
+// alert(isItBigInt);
+
+// let numberNull;
+// alert(numberNull);
+
+// const namePrompt = prompt("What's your name?");
+// alert(`His name is ${namePrompt}`);
+
+// const newLine = `First line
+// second line`;
+// console.log(newLine);
+
+const stringMethods = `Jakiś tam tekst :)`;
+console.log(stringMethods.padStart(10, "0"));
+
+// prompt(-Infinity);
+// alert(Infinity);
+
+// let inputA = prompt("First input: ");
+// let inputB = prompt("Second input: ");
+// let inputC = +inputA + +inputB;
+// alert("The sum of inputs is: " + inputC);
