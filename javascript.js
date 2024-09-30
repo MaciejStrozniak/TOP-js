@@ -68,11 +68,98 @@ console.log(typeof(tablica)); // zwraca object
 
 
 document.addEventListener('DOMContentLoaded', function(){
-    const element = document.getElementById('paragraph');
-    const array = document.getElementById('array');
-    element.innerHTML = stringMethods.replace(/jakiś/gi, "Taki");
-    array.innerHTML = stringMethods.split(" "); // nie do końca rozumiem jak to działa
-});
+    if(1 || 0 ){
+        const element = document.getElementById('paragraph');
+        const array = document.getElementById('array');
+        element.innerHTML = stringMethods.replace(/jakiś/gi, "Taki");
+        array.innerHTML = stringMethods.split(" "); // nie do końca rozumiem jak to działa
+    }
+    });
+
+// alert( alert(1) && 2 && alert(3) );
+
+// const ageIf = 10;
+
+// if(ageIf >= 14 && ageIf <= 90){
+//     alert("NICE!");
+// }
+// else{
+//     alert("Not nice...");
+// }
+
+// if(ageIf <= 14 || ageIf >= 90){
+//     alert('Lets go!');
+// }
+
+// if(!(ageIf >= 14) || !(ageIf <= 90)){
+//     alert('Lets go!_2');
+// }
+
+// ----------------------------------------------------------------
+// WRITING A LOGIN PROMPT
+// ----------------------------------------------------------------
+
+let inputName;
+let inputPassword;
+const admin = 'Admin';
+const theMaster = 'TheMaster';
+const esc = 'esc';
+const welcome = 'Welcome!';
+const canceled = 'Canceled';
+
+// enterName();
+
+function enterName(){
+    input = prompt('Enter Your name', '');
+
+    if(input === admin){
+        enterPassword();
+    }
+    else if(input === '' || input === null){
+        alert(canceled);
+    }
+    else{
+        alert("I don't know You");
+    }    
+}
+
+function enterPassword(){
+    inputPassword = prompt('Enter password', '');
+
+    if(inputPassword === theMaster){
+        alert(welcome);
+    }
+    else if(input === '' || input === null){
+        alert(canceled);
+    }
+    else{
+        alert("Wrong password");
+    }
+}
+
+
+function switcher(){
+    let input;
+    let condition;
+    input = prompt("Enter a number from 1 to 3");
+
+    if(!(input === "1" || input === "2" || input === "3")){
+        alert("Wrong input");
+    }
+    else{
+        switch(input){
+            case "1":
+                alert("First!");
+                break;
+            case "2":
+                alert("Second");
+                break;
+            case "3":
+                alert("Third");
+                break;
+        }
+    }
+}
 
 // prompt(-Infinity);
 // alert(Infinity);
