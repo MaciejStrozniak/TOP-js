@@ -170,6 +170,56 @@ function switcher(){
 // FUNCTIONS
 // ----------------------------------------------------------------
 
+function favAnimal(animal) {
+    return `${animal} is my best friend!`
+}
+
+console.warn(favAnimal('Tortoise'));
+
+
+// PRZYKŁADY TEGO SAMEGO ALE Z INNĄ SKŁADNIĄ I FUNKACJAMI ANONIMOWYMI
+// ----------------------------------------------------------------
+// function logKey(event) {
+//     console.log(`Pressed "${event.key}"`);
+// }
+
+// textBox.addEventListener("keydown", logKey);
+
+// ----------------------------------------------------------------
+
+// randomFunctionName.addEventListener("keydown", function (event) {
+//     console.log(`Pressed "${event.key}"`);
+// });
+
+// ----------------------------------------------------------------
+
+textBox.addEventListener("keydown", (event) => {
+    console.log(`Pressed "${event.key}"`);
+});
+
+// ----------------------------------------------------------------
+// PRZYKAŁD ARROW FUNCTION Z JEDNYM ARGUMENTEM - działa tak samo jak to wyżej, ale nie trzeba dodawać nawiasów przy argumencie
+//                                                 przekazywanym do funkcji
+
+textBox.addEventListener("keydown", event => {
+    console.log(`Pressed "${event.key}"`);
+})
+
+// ----------------------------------------------------------------
+// PRZY ZWRACANIU TYLKO JEDNEGO ARUGUMENTU - można zapisać wszystko krócej
+
+const originalTable = [1, 2, 3];
+
+const doubled = originals.map(item => item * 2); // item to warunek przekazywany do funkcji a (item*2) to zwrot z funkcji
+
+console.log(doubled); // [2, 4, 6]
+
+// ----------------------------------------------------------------
+// WRACAJĄC DO EVENT LISTENERA - ten sam super krótki przykład
+
+textBox.addEventListener("keydown", (event) => console.log(`Pressed "${event.key}"`),);
+
+
 
 // prompt(-Infinity);
 // alert(Infinity);
