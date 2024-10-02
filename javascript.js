@@ -30,7 +30,7 @@ console.log("-----------");
 
 let number = "67";
 number = +number + +"3";
-console.log(number);
+console.log(number + "tutaj");
 console.log(typeof(number));
 number = number + 7;
 if (number === 70)
@@ -46,6 +46,11 @@ else
 console.log("2" + 2 + 1);
 
 console.log("-----------");
+
+console.log(document.head);
+
+console.time();
+console.timeEnd();
 
 // const isItBigInt = 9999999999999999999999999999999999999999999999999999999999999999999n;
 // alert(typeof(isItBigInt));
@@ -160,6 +165,11 @@ function switcher(){
         }
     }
 }
+
+// ----------------------------------------------------------------
+// FUNCTIONS
+// ----------------------------------------------------------------
+
 
 // prompt(-Infinity);
 // alert(Infinity);
