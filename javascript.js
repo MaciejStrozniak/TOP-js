@@ -193,17 +193,17 @@ console.warn(favAnimal('Tortoise'));
 
 // ----------------------------------------------------------------
 
-textBox.addEventListener("keydown", (event) => {
-    console.log(`Pressed "${event.key}"`);
-});
+// textBox.addEventListener("keydown", (event) => {
+//     console.log(`Pressed "${event.key}"`);
+// });
 
 // ----------------------------------------------------------------
 // PRZYKAŁD ARROW FUNCTION Z JEDNYM ARGUMENTEM - działa tak samo jak to wyżej, ale nie trzeba dodawać nawiasów przy argumencie
 //                                                 przekazywanym do funkcji
 
 textBox.addEventListener("keydown", event => {
-    console.log(`Pressed "${event.key}"`);
-})
+    console.log(`Pressed "${event.key}"`)
+});
 
 // ----------------------------------------------------------------
 // PRZY ZWRACANIU TYLKO JEDNEGO ARUGUMENTU - można zapisać wszystko krócej
@@ -228,3 +228,32 @@ textBox.addEventListener("keydown", (event) => console.log(`Pressed "${event.key
 // let inputB = prompt("Second input: ");
 // let inputC = +inputA + +inputB;
 // alert("The sum of inputs is: " + inputC);
+
+
+// Ćwiczenie z arrow functions
+
+function ask(question, yes, no) {
+    if (confirm(question)) yes();
+    else no();
+}
+
+ask (
+    "Do You agree?",
+    function() { alert("Yes"); },
+    function() { alert("No"); }
+);
+
+// przerobienie na arrow function
+
+function ask(question, yes, no) {
+    if(confirm(question)) yes();
+    else no();
+}
+
+question( 
+    "Do You agree?",
+    () => { alert("Yes")},
+    () => { alert("No")}
+);
+
+
