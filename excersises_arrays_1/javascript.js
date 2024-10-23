@@ -35,7 +35,6 @@ log(cars instanceof Array);
 //         log("error");
 //});
 
-let htmlTextVar = "";
 
 document.addEventListener('DOMContentLoaded', () => {
     const documentElement = document.getElementById('array');
@@ -44,8 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for(let i in carsData) {
             
-            documentElement.innerHTML =
-                htmlTextVar += 
+            documentElement.innerHTML +=
                 "<h2>" + carsData[i].company + "</h2>" + 
                 "<h4>" + carsData[i].model + "</h4>" + " " +
                 "<h4>" + carsData[i].year + "</h4>"; 
