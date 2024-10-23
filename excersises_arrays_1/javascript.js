@@ -45,13 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
         for(let i in carsData) {
             
             documentElement.innerHTML =
-                htmlTextVar += "<h2>" + carsData[i].company + "</h2>";
-
-                    for(let j in carsData) {   
-                        documentElement.innerHTML =
-                            htmlTextVar += "<h4>" + carsData[j].model + "</h4>" + " " +
-                            "<h4>" + carsData[j].year + "</h4>";
-                    }   
+                htmlTextVar += 
+                "<h2>" + carsData[i].company + "</h2>" + 
+                "<h4>" + carsData[i].model + "</h4>" + " " +
+                "<h4>" + carsData[i].year + "</h4>"; 
         }
     }
     else
