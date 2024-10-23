@@ -1,3 +1,5 @@
+let iMadeItJustForTest;
+
 console.log("External js script");
 
 let name = "John";
