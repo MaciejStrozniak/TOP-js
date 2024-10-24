@@ -8,13 +8,15 @@ const carsData = [
     {
         company: "Skoda",
         model: "Scala",
-        year: "2024"
+        year: "2024",
+        picture: "https://ocs-pl.oktawave.com/v1/AUTH_2887234e-384a-4873-8bc5-405211db13a2/autoblog/2023/12/27906-Scala_MC_34front.jpg"
     },
 
     {
-        company: "VW",
+        company: "Volkswagen",
         model: "Golf",
-        year: "2022"
+        year: "2022",
+        picture: "https://i.gaw.to/content/photos/40/42/404207_2022_Volkswagen_Golf.jpg"
     }
 ];
 
@@ -28,13 +30,6 @@ log(cars.toString());
 log(Array.isArray(cars));
 log(cars instanceof Array);
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     if(document.getElementById("array"))
-//         document.getElementById("array").innerHTML = cars.toString();
-//     else
-//         log("error");
-//});
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const documentElement = document.getElementById('array');
@@ -44,9 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
         for(let i in carsData) {
             
             documentElement.innerHTML +=
-                "<h2>" + carsData[i].company + "</h2>" + 
-                "<h4>" + carsData[i].model + "</h4>" + " " +
-                "<h4>" + carsData[i].year + "</h4>"; 
+                `<h2>${carsData[i].company}</h2>` + 
+                `<h4>${carsData[i].model}</h4>` +
+                `<h4>${carsData[i].year}</h4>` +
+                `<img src=${carsData[i].picture}>`;
         }
     }
     else
@@ -59,3 +55,7 @@ for(i=0; i <= carsData.length -1; i++) {
         carsData[i].year
     );
 }
+
+log(cars.join(" --- "));
+log(carsData.at(-2));
+log(`${cars.includes("Dodge")} + ${cars.includes("Audi")}`);
