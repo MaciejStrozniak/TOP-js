@@ -112,17 +112,15 @@ function createListOfGuests() {
     let refused = [];
     let admitted = [];
 
-    for(let i of people) {
-        if(people === "Lola" || people === "Phil")
-            refused.push(people);
+    for(let i in people) {
+        if(people[i] === "Lola" || people[i] === "Phil")
+            refused.push(people[i]);
         else
-            admitted.push(people);        
+            admitted.push(people[i]);        
     }
-    log(refused instanceof Array);
-  
-    log(`Refused guests: ${refused.join(", ")}`);
-   
-        log(`Admitted guests: ${admitted.join(", ")}`);
+
+    log(`Refused guests: ${refused.join(", ")}`);   
+    log(`Admitted guests: ${admitted.join(", ")}`);
 }
 
 createListOfGuests();
