@@ -30,9 +30,10 @@ log(cars.toString());
 log(Array.isArray(cars));
 log(cars instanceof Array);
 
-
 document.addEventListener('DOMContentLoaded', () => {
-    const documentElement = document.getElementById('array');
+    const documentElement = document.getElementById('array'); // takes element to add car datas to it
+    const outputElement = document.getElementById('counter'); // takes the element to add rocket launch counting to it
+    const startTheCounter = document.getElementById('button'); // takes the button that starts the counter
 
     if(documentElement) {
 
@@ -47,7 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     else
         log('error');
+
+    startTheCounter.addEventListener('click', () => {
+        startCountdown(outputElement);
+    });
+
 });
+
 
 for(i=0; i <= carsData.length -1; i++) {
     log(carsData[i].company + " " +
@@ -59,3 +66,19 @@ for(i=0; i <= carsData.length -1; i++) {
 log(cars.join(" --- "));
 log(carsData.at(-2));
 log(`${cars.includes("Dodge")} + ${cars.includes("Audi")}`);
+
+
+// ----------------------------------------- NO MORE CARS IN THE SECTION BELOW ------------------------------------------------
+// ----------------------------------------- TIME FOR ROCKET LAUNCH COUNTER ----------------------------------------------
+
+// ROCKET COUNTDOWN
+function startCountdown(output) {
+    for(i=10; i >= 0; i--) {
+        if(i === 10)
+            output.innerHTML += `<p>Countdown ${i}</p>`;
+        else if(i === 0)
+            output.innerHTML += `<p>BLAST OFF!</p>`;
+        else
+            output.innerHTML += `<p>${i} </p>`;
+    }
+}
