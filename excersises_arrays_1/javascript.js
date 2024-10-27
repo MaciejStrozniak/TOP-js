@@ -50,11 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
         log('error');
 
     startTheCounter.addEventListener('click', () => {
+        bodyCountdownColor();        
         startCountdown(outputElement);
+        scrollToCounter();
     });
 
 });
-
 
 for(i=0; i <= carsData.length -1; i++) {
     log(carsData[i].company + " " +
@@ -71,8 +72,13 @@ log(`${cars.includes("Dodge")} + ${cars.includes("Audi")}`);
 // ----------------------------------------- NO MORE CARS IN THE SECTION BELOW ------------------------------------------------
 // ----------------------------------------- TIME FOR ROCKET LAUNCH COUNTER ----------------------------------------------
 
+function bodyCountdownColor() {
+    document.body.style.backgroundColor = "red";
+}
+
 // ROCKET COUNTDOWN
 function startCountdown(output) {
+
     for(i=10; i >= 0; i--) {
         if(i === 10)
             output.innerHTML += `<p>Countdown ${i}</p>`;
@@ -82,3 +88,41 @@ function startCountdown(output) {
             output.innerHTML += `<p>${i} </p>`;
     }
 }
+
+function scrollToCounter() {    
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+    });
+}
+
+
+// ------------------------------------------ GUESTS ARRAY -----------------------------------------------
+
+const people = [
+    "Tim",
+    "Phil",
+    "Timothy",
+    "Lola",
+    "Nina",
+    "Tola"
+]
+
+function createListOfGuests() {
+    let refused = [];
+    let admitted = [];
+
+    for(let i of people) {
+        if(people === "Lola" || people === "Phil")
+            refused.push(people);
+        else
+            admitted.push(people);        
+    }
+    log(refused instanceof Array);
+  
+    log(`Refused guests: ${refused.join(", ")}`);
+   
+        log(`Admitted guests: ${admitted.join(", ")}`);
+}
+
+createListOfGuests();
